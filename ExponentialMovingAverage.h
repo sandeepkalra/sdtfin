@@ -74,7 +74,7 @@ namespace stdfin
 					result = temp;
 					results.push_back(result);
 				}
-				return move(results); 
+				return std::move(results); 
 			}
 
 	// Another version with 4th Argument as "int N" (ref: Wikipedia)
@@ -91,7 +91,7 @@ namespace stdfin
 			{
 				if (N < int()) N = int();
 				float alpha = (double(2))/(N+1); 
-				return move(stdfin::ExponentialMovingAverage<SampleType,IndexType,CONTAINER,Iterator>(v,start_pos,end_pos,float(alpha)));
+				return std::move(stdfin::ExponentialMovingAverage<SampleType,IndexType,CONTAINER,Iterator>(v,start_pos,end_pos,float(alpha)));
 			}
 };
 
