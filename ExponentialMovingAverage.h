@@ -43,7 +43,7 @@ namespace stdfin
 	template< typename SampleType, typename IndexType,
 		template <typename E, typename = std::allocator<E>> class CONTAINER, 
 		typename Iterator >
-			const CONTAINER<SampleType> ExponentialMovingAverage 
+			 CONTAINER<SampleType> ExponentialMovingAverage 
 			(
 			 const CONTAINER<SampleType>& v, 
 			 IndexType start_pos, 
@@ -74,14 +74,14 @@ namespace stdfin
 					result = temp;
 					results.push_back(result);
 				}
-				return std::move(results); 
+				return (results); 
 			}
 
 	// Another version with 4th Argument as "int N" (ref: Wikipedia)
 	template< typename SampleType, typename IndexType,
 		template <typename E, typename = std::allocator<E>> class CONTAINER, 
 		typename Iterator >
-			const CONTAINER<SampleType> ExponentialMovingAverage 
+			 CONTAINER<SampleType> ExponentialMovingAverage 
 			(
 			 const CONTAINER<SampleType>& v, 
 			 IndexType start_pos, 
@@ -91,7 +91,7 @@ namespace stdfin
 			{
 				if (N < int()) N = int();
 				float alpha = (double(2))/(N+1); 
-				return std::move(stdfin::ExponentialMovingAverage<SampleType,IndexType,CONTAINER,Iterator>(v,start_pos,end_pos,float(alpha)));
+				return (stdfin::ExponentialMovingAverage<SampleType,IndexType,CONTAINER,Iterator>(v,start_pos,end_pos,float(alpha)));
 			}
 };
 

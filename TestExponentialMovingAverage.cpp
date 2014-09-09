@@ -33,6 +33,7 @@
  *--------------------------------------------------------------------*/
 
 #include "ExponentialMovingAverage.h"
+#include <vector>
 using namespace std;
 using namespace stdfin;
 int main()
