@@ -35,6 +35,7 @@
 #ifndef _SIMPLE_MOVING_AVERAGE_H_
 #define _SIMPLE_MOVING_AVERAGE_H_
 
+#include <iostream>
 #include <algorithm>
 
 namespace stdfin 
@@ -43,7 +44,7 @@ namespace stdfin
 	template< typename SampleType, typename IndexType,
 		  template <typename E, typename = std::allocator<E>> class CONTAINER, 
 		  typename Iterator >
-		const CONTAINER<SampleType> SimpleMovingAverage ( 
+		 CONTAINER<SampleType> SimpleMovingAverage ( 
 			const CONTAINER<SampleType>& v, 
 			IndexType start_pos, 
 			IndexType end_pos, 
@@ -82,7 +83,7 @@ namespace stdfin
 				if(!window) break; //cannot allow divide by zero!
 				if(i!=j) ++i;
 			}
-			return move(results);
+			return (results);
 		} 
 };
 
